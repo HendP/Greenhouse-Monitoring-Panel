@@ -12,24 +12,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/green.png">
     <title>Greenhouse Panel</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
-    <link rel="stylesheet" type="text/css"
-        href="../../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/libs/quill/dist/quill.snow.css">
+    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="../../dist/css/style.min.css" rel="stylesheet">
-    <!-- Custom Toggle -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../dist/css/toggle/custom-toggle.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Emergency Dependency -->
+    <link href="../../assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -110,29 +103,12 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-right">
                         <!-- ============================================================== -->
-                        <!-- Comment -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- End Comment -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                                    class="font-24 mdi mdi-comment-processing"></i>
+                                    class="mdi mdi-bell font-24"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown"
                                 aria-labelledby="2">
@@ -237,13 +213,17 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" 
-                            href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                            class="hide-menu">Monitoring Panel</span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index.html" aria-expanded="false"><i class="mdi mdi-monitor"></i><span
+                                    class="hide-menu">Monitoring Panel</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" 
-                            href="history.html" aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span
-                            class="hide-menu">Histori</span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="log-suhu.html" aria-expanded="false"><i class="mdi mdi-oil-temperature"></i><span
+                                class="hide-menu">Log Suhu</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="log-cahaya.html" aria-expanded="false"><i class="mdi mdi-lightbulb-on-outline"></i><span
+                                class="hide-menu">Log Cahaya</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -264,7 +244,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h3 class="page-title">Tanaman Tomat</h3>
+                        <h3 class="page-title">Monitoring Panel</h3>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -327,10 +307,11 @@
                                             <h6>Status</h6>
                                             <h2 style="color:green;text-align: center;">Aktif</h2>
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                    style="width:40%">
                                                     40%
                                                 </div>
-                                              </div>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -413,7 +394,6 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
     <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
     <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
@@ -422,17 +402,18 @@
     <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../../dist/js/custom.min.js"></script>
-    <!-- This Page JS -->
-    <script src="../../assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-    <script src="../../dist/js/pages/mask/mask.init.js"></script>
-    <script src="../../assets/libs/select2/dist/js/select2.full.min.js"></script>
-    <script src="../../assets/libs/select2/dist/js/select2.min.js"></script>
-    <script src="../../assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
-    <script src="../../assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
-    <script src="../../assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
-    <script src="../../assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
-    <script src="../../assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="../../assets/libs/quill/dist/quill.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="../../assets/libs/flot/excanvas.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
+
 
     <!-- Chart -->
     <script src="../../dist/js/canvasjs.min.js"></script>
