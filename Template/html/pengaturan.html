@@ -13,7 +13,8 @@
     <title>Greenhouse Panel</title>
     <!-- Custom CSS -->
     <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/normalize.min.css">
+    <link rel='stylesheet' href='../dist/css/rangeslider.min.css'>
     <link href="../dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,6 +24,7 @@
     <![endif]-->
     <!-- Emergency Dependency -->
     <link href="../assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -155,7 +157,8 @@
                                             <a href="javascript:void(0)" class="link border-top">
                                                 <div class="d-flex no-block align-items-center p-10">
                                                     <div class="m-l-10">
-                                                        <h6 class="m-b-0" style="margin-left: 35px;">Cek Seluruh Notifikasi</h6>
+                                                        <h6 class="m-b-0" style="margin-left: 35px;">Cek Seluruh
+                                                            Notifikasi</h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -216,15 +219,16 @@
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map.html"
-                                aria-expanded="false"><i class="mdi mdi-map"></i><span class="hide-menu">Map</span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="map.html" aria-expanded="false"><i class="mdi mdi-map"></i><span
+                                    class="hide-menu">Map</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="histori.html"
-                                aria-expanded="false"><i class="mdi mdi-history"></i><span
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="histori.html" aria-expanded="false"><i class="mdi mdi-history"></i><span
                                     class="hide-menu">Histori</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pengaturan.html"
-                                aria-expanded="false"><i class="mdi mdi-settings-box"></i><span
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="pengaturan.html" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span
                                     class="hide-menu">Pengaturan</span></a>
                         </li>
                     </ul>
@@ -268,255 +272,240 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <form class="form-horizontal">
-                                <div class="card-body">
-
-                                    <h4 class="card-title text-center">Kipas</h4>
-                                    <div class="dropdown-divider border-bottom"></div>
-                                    <h2 style="color:white; text-align: center; background-color: green;">Aktif</h2>
-
-                                    <h4 class="card-title text-center " style="margin-top: 40px;">Pemanas</h4>
-                                    <div class="dropdown-divider border-bottom"></div>
-                                    <h2 style="color:white; text-align: center; background-color: red;">Non Aktif</h2>
-
-                                    <h4 class="card-title text-center" style="margin-top: 40px;">Lampu</h4>
-                                    <div class="dropdown-divider border-bottom"></div>
-                                    <h2 style="color:white; text-align: center; background-color: green;">Aktif</h2>
-
-                                    <h4 class="card-title text-center" style="margin-top: 40px;">Tirai</h4>
-                                    <div class="dropdown-divider border-bottom"></div>
-                                    <div class="progress" style="height: 45px;">
-                                        <div class="progress-bar" style="width:40%; font-size: 24px;">
-                                            40%
-                                        </div>
+                    <div class="col-md-6">
+                        <div class="kipas">
+                            <div class="card-group">
+                                <div class="card bg-success ">
+                                    <div class="card-body text-center">
+                                        <h1 class="font-light text-white"><i class="mdi mdi-fan"></i></h1>
+                                        <h4 style="color: white">Kipas</h4>
                                     </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <br>
+                                        <h3>600 RPM</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <form class="form-horizontal">
+                                    <div class="card-body">
+                                        <input type="range" value="20" step="10" min="0" max="100">
+                                        <h2 style="margin-top: 10px;">
+                                            <output style=" margin-left:210px; float:left;">20</output>
+                                            <span style="float:left">%</span>
+                                        </h2>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="pemanas">
+                            <div class="card-group">
+                                <div class="card bg-success ">
+                                    <div class="card-body text-center">
+                                        <h1 class="font-light text-white"><i class="mdi mdi-oil-temperature"></i></h1>
+                                        <h4 style="color: white">Pemanas</h4>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <br>
+                                        <h3>Aktif</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <form class="form-horizontal">
+                                    <div class="card-body">
+                                        <input type="range" value="20" step="10" min="0" max="100">
+                                        <h2 style="margin-top: 10px;">
+                                            <output style=" margin-left:210px; float:left;">20</output>
+                                            <span style="float:left">%</span>
+                                        </h2>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="lampu">
+                            <div class="card-group">
+                                <div class="card bg-success ">
+                                    <div class="card-body text-center">
+                                        <h1 class="font-light text-white"><i class="mdi mdi-lightbulb"></i></h1>
+                                        <h4 style="color: white">Lampu LED</h4>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <br>
+                                        <h3>400 Lumen</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <form class="form-horizontal">
+                                    <div class="card-body">
+                                        <input type="range" value="20" step="10" min="0" max="100">
+                                        <h2 style="margin-top: 10px;">
+                                            <output style=" margin-left:210px; float:left;">20</output>
+                                            <span style="float:left">%</span>
+                                        </h2>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tirai">
+                            <div class="card-group">
+                                <div class="card bg-success ">
+                                    <div class="card-body text-center">
+                                        <h1 class="font-light text-white"><i class="fas fa-window-maximize"></i></h1>
+                                        <h4 style="color: white">Tirai</h4>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <br>
+                                        <h3>Aktif</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <form class="form-horizontal">
+                                    <div class="card-body">
+                                        <input type="range" value="20" step="10" min="0" max="100">
+                                        <h2 style="margin-top: 10px;">
+                                            <output style=" margin-left:210px; float:left;">20</output>
+                                            <span style="float:left">%</span>
+                                        </h2>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- <div class="col-md-4">
-                        <div class="card">
-                            <form class="form-horizontal">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Suhu</h4>
-                                    <div class="dropdown-divider border-bottom"></div>
-                                    <h6>Status</h6>
-                                    <h2 style="color:green;margin-left: 39%; margin-top: 10%">21&deg;C</h2>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="card">
-                            <form class="form-horizontal">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Cahaya</h4>
-                                    <div class="dropdown-divider border-bottom"></div>
-                                    <h6>Status</h6>
-                                    <h2 style="color:green;margin-left: 30%; margin-top: 10%">2100 LUX</h2>
-                                </div>
-                            </form>
-                        </div>
-                    </div> -->
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h4 class="card-title text-center" style="margin-left: 140px">Suhu</h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="card-title text-center" style="margin-left: 280px; color:green">
-                                                21&deg;C</h4>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div id="chartSuhu" style="height: 170px; width: 100%;"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h4 class="card-title text-center" style="margin-left: 130px">Cahaya</h4>
-                                        </td>
-                                        <td>
-                                            <h4 class="card-title text-center" style="margin-left: 240px; color:green">
-                                                2100 LUX</h4>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div id="chartCahaya" style="height: 170px; width: 100%;"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Page Content -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Right sidebar -->
+                    <!-- ============================================================== -->
+                    <!-- .right-sidebar -->
+                    <!-- ============================================================== -->
+                    <!-- End Right sidebar -->
+                    <!-- ============================================================== -->
                 </div>
-
                 <!-- ============================================================== -->
-                <!-- End Page Content -->
+                <!-- End Container fluid  -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-                <!-- Right sidebar -->
+                <!-- footer -->
                 <!-- ============================================================== -->
-                <!-- .right-sidebar -->
+                <footer class="footer text-center">
+                    <!-- All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>. -->
+                </footer>
                 <!-- ============================================================== -->
-                <!-- End Right sidebar -->
+                <!-- End footer -->
                 <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                <!-- All Rights Reserved by Matrix-admin. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>. -->
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- End Page wrapper  -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Wrapper -->
         <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
-    <!--Wave Effects -->
-    <script src="../dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
-    <!-- Charts js Files -->
-    <script src="../assets/libs/flot/excanvas.js"></script>
-    <script src="../assets/libs/flot/jquery.flot.js"></script>
-    <script src="../assets/libs/flot/jquery.flot.pie.js"></script>
-    <script src="../assets/libs/flot/jquery.flot.time.js"></script>
-    <script src="../assets/libs/flot/jquery.flot.stack.js"></script>
-    <script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
-    <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="../dist/js/pages/chart/chart-page-init.js"></script>
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+        <!--Wave Effects -->
+        <script src="../dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="../dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="../dist/js/custom.min.js"></script>
+        <!--This page JavaScript -->
+        <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+        <!-- Charts js Files -->
+        <script src="../assets/libs/flot/excanvas.js"></script>
+        <script src="../assets/libs/flot/jquery.flot.js"></script>
+        <script src="../assets/libs/flot/jquery.flot.pie.js"></script>
+        <script src="../assets/libs/flot/jquery.flot.time.js"></script>
+        <script src="../assets/libs/flot/jquery.flot.stack.js"></script>
+        <script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
+        <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <script src="../dist/js/pages/chart/chart-page-init.js"></script>
+        <script src="../assets/libs/rangeslider/rangeslider.min.js"></script>
 
 
-    <!-- Chart -->
-    <script src="../dist/js/canvasjs.min.js"></script>
+        <!-- Chart -->
+        <script src="../dist/js/canvasjs.min.js"></script>
 
-    <script>
-        //***********************************//
-        // For select 2
-        //***********************************//
-        $(".select2").select2();
+        <script>
+            //***********************************//
+            // For select 2
+            //***********************************//
+            $(".select2").select2();
 
-        /*colorpicker*/
-        $('.demo').each(function () {
-            //
-            // Dear reader, it's actually very easy to initialize MiniColors. For example:
-            //
-            //  $(selector).minicolors();
-            //
-            // The way I've done it below is just for the demo, so don't get confused
-            // by it. Also, data- attributes aren't supported at this time...they're
-            // only used for this demo.
-            //
-            $(this).minicolors({
-                control: $(this).attr('data-control') || 'hue',
-                position: $(this).attr('data-position') || 'bottom left',
+            /*colorpicker*/
+            $('.demo').each(function () {
+                //
+                // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                //
+                //  $(selector).minicolors();
+                //
+                // The way I've done it below is just for the demo, so don't get confused
+                // by it. Also, data- attributes aren't supported at this time...they're
+                // only used for this demo.
+                //
+                $(this).minicolors({
+                    control: $(this).attr('data-control') || 'hue',
+                    position: $(this).attr('data-position') || 'bottom left',
 
-                change: function (value, opacity) {
-                    if (!value) return;
-                    if (opacity) value += ', ' + opacity;
-                    if (typeof console === 'object') {
-                        console.log(value);
-                    }
-                },
-                theme: 'bootstrap'
+                    change: function (value, opacity) {
+                        if (!value) return;
+                        if (opacity) value += ', ' + opacity;
+                        if (typeof console === 'object') {
+                            console.log(value);
+                        }
+                    },
+                    theme: 'bootstrap'
+                });
+
             });
-
-        });
-        /*datwpicker*/
-        jQuery('.mydatepicker').datepicker();
-        jQuery('#datepicker-autoclose').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        });
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });
-    </script>
-
-    <!-- Script Chart -->
-    <script>
-        window.onload = function () {
-
-            var dps = []; // dataPoints
-            var chart = new CanvasJS.Chart("chartSuhu", {
-                axisY: {
-                    includeZero: false
-                },
-                data: [{
-                    type: "line",
-                    dataPoints: dps
-                }]
+            /*datwpicker*/
+            jQuery('.mydatepicker').datepicker();
+            jQuery('#datepicker-autoclose').datepicker({
+                autoclose: true,
+                todayHighlight: true
             });
-
-            var chart2 = new CanvasJS.Chart("chartCahaya", {
-                axisY: {
-                    includeZero: false
-                },
-                data: [{
-                    type: "line",
-                    dataPoints: dps
-                }]
+            var quill = new Quill('#editor', {
+                theme: 'snow'
             });
+        </script>
 
-            var xVal = 0;
-            var yVal = 100;
-            var updateInterval = 1000;
-            var dataLength = 20; // number of dataPoints visible at any point
+        <!-- Slider -->
+        <script>
+            $(function () {
+                var output = document.querySelectorAll('output')[0];
 
-            var updateChart = function (count) {
+                $(document).on('input', 'input[type="range"]', function (e) {
+                    output.innerHTML = e.currentTarget.value;
+                });
 
-                count = count || 1;
-
-                for (var j = 0; j < count; j++) {
-                    yVal = yVal + Math.round(5 + Math.random() * (-5 - 5));
-                    dps.push({
-                        x: xVal,
-                        y: yVal
-                    });
-                    xVal++;
-                }
-
-                if (dps.length > dataLength) {
-                    dps.shift();
-                }
-
-                chart.render();
-                chart2.render();
-            };
-
-            updateChart(dataLength);
-            setInterval(function () { updateChart() }, updateInterval);
-
-        }
-    </script>
+                $('input[type=range]').rangeslider({
+                    polyfill: false
+                });
+            });
+        </script>
 </body>
 
 </html>
