@@ -293,7 +293,8 @@
                                     <div class="card-body">
                                         <input type="range" value="20" step="10" min="0" max="100">
                                         <h2 style="margin-top: 10px;">
-                                            <output style=" margin-left:210px; float:left;">20</output>
+                                            <output class="out-kipas"
+                                                style=" margin-left:210px; float:left;">20</output>
                                             <span style="float:left">%</span>
                                         </h2>
                                     </div>
@@ -320,7 +321,8 @@
                                     <div class="card-body">
                                         <input type="range" value="20" step="10" min="0" max="100">
                                         <h2 style="margin-top: 10px;">
-                                            <output style=" margin-left:210px; float:left;">20</output>
+                                            <output class="out-pemanas"
+                                                style=" margin-left:210px; float:left;">20</output>
                                             <span style="float:left">%</span>
                                         </h2>
                                     </div>
@@ -495,13 +497,24 @@
         <!-- Slider -->
         <script>
             $(function () {
-                var output = document.querySelectorAll('output')[0];
+                var $document = $(document),
+                    $inputRange = $('input[type="range"]');
 
-                $(document).on('input', 'input[type="range"]', function (e) {
-                    output.innerHTML = e.currentTarget.value;
+                // Example functionality to demonstrate a value feedback
+                function valueOutput(element) {
+                    var value = element.value,
+                        output = element.parentNode.getElementsByTagName('output')[0];
+                    output.innerHTML = value;
+                }
+                for (var i = $inputRange.length - 1; i >= 0; i--) {
+                    valueOutput($inputRange[i]);
+                };
+                $document.on('input', 'input[type="range"]', function (e) {
+                    valueOutput(e.target);
                 });
+                // end
 
-                $('input[type=range]').rangeslider({
+                $inputRange.rangeslider({
                     polyfill: false
                 });
             });
